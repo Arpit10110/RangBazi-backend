@@ -16,11 +16,19 @@ const Schema = new mongoose.Schema({
         type:String,
         required:true
     },
-    transid:{
+    account:{
         type:String,
         required:true
+    }, 
+    ifsc:{
+        type:String,
+        required :true
     },
-    imgurl:{
+    bankname:{
+        type:String,
+        required :true
+    },
+    branchname:{
         type:String,
         required :true
     },
@@ -30,4 +38,4 @@ const Schema = new mongoose.Schema({
     }
 })
 
-export const Wallet = mongoose.model("Wallet",Schema)
+export const Withdrawal = mongoose.model("Withdrawal",Schema)

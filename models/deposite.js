@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 const Schema = new mongoose.Schema({
+    userid:{
+        type:String,
+        required:true
+    },
     name:{
         type:String,
         required:true
@@ -8,18 +12,22 @@ const Schema = new mongoose.Schema({
         type:String,
         required:true
     },
-    password:{
+    amount:{
         type:String,
         required:true
     },
-    phone:{
+    transid:{
         type:String,
         required:true
     },
-    wallet:{
-        type:Number,
-        required:true
+    imgurl:{
+        type:String,
+        required :true
     },
+    pending:{
+        type:Boolean,
+        required:true
+    }
 })
 
-export const User = mongoose.model("User",Schema)
+export const deposite = mongoose.model("deposite",Schema)

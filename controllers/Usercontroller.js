@@ -1,3 +1,4 @@
+import { response } from "express";
 import {User} from "../models/User.js"
 
 export const register = async(req,res)=>{
@@ -15,13 +16,13 @@ export const register = async(req,res)=>{
           email: email,
           password: password,
           phone: phone,
-          wallet:0
+          wallet:500
         })
         res.json({
             success: true,
             message:"Your registered successfully",
             id: userfound._id,
-            wallet:0
+            wallet:500
         })
     }
 }
@@ -50,4 +51,13 @@ export const login = async(req,res)=>{
                 })
             }
     }
+}
+
+
+export const getalluser=async(req,res)=>{
+        const alldata= await User.find({});
+        res.json({
+            success: true,
+            data: alldata
+        })
 }
