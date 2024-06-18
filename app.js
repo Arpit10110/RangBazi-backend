@@ -7,7 +7,7 @@ config({
     path:"./db/config.env"
 })
 app.use(cors({
-    origin: [process.env.Fronted_URL],
+    origin: [process.env.Fronted_URL,process.env.LocalFronted_URL],
     methods: ['GET', 'POST','PUT', 'DELETE'],
 }));
 app.use(express.urlencoded({extended:true}));
